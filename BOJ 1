@@ -19,3 +19,54 @@ void pop() {
 	else
 		printf("%d\n", -1);
 }
+
+// top: 스택의 가장 위에 있는 정수를 출력
+void top() {
+	if (count != 0)
+		printf("%d\n", number[count - 1]);
+	else
+		printf("%d\n", -1);
+}
+
+void size() {
+	printf("%d\n", count);
+}
+
+void empty() {
+	if (count != 0) {
+		printf("0\n");
+	}
+	else {
+		printf("1\n");
+	}
+}
+
+int main() {
+	int n;
+	char stack[10];
+
+	scanf("%d", &n); // 명령의 수 입력 받기
+
+	int number[100];
+
+	for (int i = 0; i < n; i++) {
+		scanf("%s", &stack);
+		if (strcmp(stack, "push") == 0) {
+			int num;
+			scanf("%d", &num);
+			push(num);
+		}
+		else if (strcmp(stack, "pop") == 0) {
+			pop();
+		}
+		else if (strcmp(stack, "top") == 0) {
+			top();
+		}
+		else if (strcmp(stack, "size") == 0) {
+			size();
+		}
+		else if (strcmp(stack, "empty") == 0) {
+			empty();
+		}
+	}
+}
