@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h> 
+
+int number[100001];
+int count = 0;
+
+void push(int num) {
+	number[count] = num;
+	count++;
+}
+
+void pop() {
+	if (count != 0) {
+		count--;
+		printf("%d\n", number[count]);
+		number[count] = 0;
+	}
+	else
+		printf("%d\n", -1);
+}
